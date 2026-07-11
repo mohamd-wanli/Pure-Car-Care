@@ -3,11 +3,12 @@ import { useEffect } from 'react';
 import { navLinks } from '../../Constants/constants.js';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const Navbar = () => {
-  useEffect(() => {
+  useGSAP(() => {
     const navTween = gsap.timeline({
       scrollTrigger: {
         trigger: 'nav',
