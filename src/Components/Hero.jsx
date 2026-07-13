@@ -1,4 +1,3 @@
-import React from 'react';
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
@@ -6,7 +5,11 @@ import { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 
 const Hero = () => {
-     useGSAP(() => {
+ const videoRef = useRef(null);
+ 
+ const isMobile = useMediaQuery({ maxWidth: 767 });
+ 
+ useGSAP(() => {
 	const heroSplit = new SplitText(".title", {
 	 type: "chars, words",
 	});
@@ -42,44 +45,89 @@ const Hero = () => {
 		end: "bottom top",
 		scrub: true,
 	 },
-     	})
+	})
 	.to(".right-leaf", { y: 200 }, 0)
 	.to(".left-leaf", { y: -200 }, 0)
 	.to(".arrow", { y: 100 }, 0);
-     }, []);
-  return (
-
-    <>
-    <section id='hero' className='noisy'>
-        <h1 className="title">Pure</h1>
-        <img src="images/righttire.jpg" alt="lefttire"
-        className='right-leaf' />
-         <img src="images/lefttire.jpg" alt="righttire"
-        className="left-leaf" />
-
-        	<div className="body">
+	
+	const video = videoRef.current;
+	
+	if (!video) return;
+	
+	const startValue = isMobile ? "top 50%" : "center 60%";
+	const endValue = isMobile ? "120% top" : "bottom top";
+	
+	const playVideoOnScroll = () => {
+	 const duration = video.duration || 2;
+	 
+	 gsap.to(video, {
+		currentTime: duration,
+		ease: "none",
+		scrollTrigger: {
+		 trigger: "#hero",
+		 start: startValue,
+		 end: endValue,
+		 scrub: true,
+		},
+	 });
+	};
+	
+	if (video.readyState >= 2) {
+	 playVideoOnScroll();
+	} else {
+	 video.addEventListener("loadedmetadata", playVideoOnScroll, { once: true });
+	}
+ }, [isMobile]);
+ 
+ return (
+	<>
+	 <section id="hero" className="noisy">
+		<h1 className="title">Pure</h1>
+		
+		{/* <img
+		 src="/images/hero-left-leaf.png"
+		 alt="left-leaf"
+		 className="left-leaf"
+		/>
+		<img
+		 src="/images/hero-right-leaf.png"
+		 alt="right-leaf"
+		 className="right-leaf"
+		/> */}
+		
+		<div className="body">
 		 {/* <img src="/images/arrow.png" alt="arrow" className="arrow" /> */}
 		 
 		 <div className="content">
 			<div className="space-y-5 hidden md:block">
-			 <p>Unleash the Ultimate Shine</p>
+			 <p>Wash. Protect. Perfection.</p>
 			 <p className="subtitle">
-				Fix Your Car <br /> With Us
+				Experience the Luxury <br /> of Elite Car Care
 			 </p>
 			</div>
 			
 			<div className="view-cocktails">
 			 <p className="subtitle">
-				Every product in our collection is a blend of premium formulas, 
-                cutting-edge science, and proven results — designed to protect your investment.
+				"Every treatment in our garage is a blend of advanced formulations,
+				 expert care, and relentless passion — designed to restore and protect your vehicle's showroom shine."
 			 </p>
 			 <a href="#cocktails">View Services</a>
 			</div>
 		 </div>
 		</div>
-    </section>
-    </>
-  )
-}
+	 </section>
+	 
+	 <div className="video absolute inset-0">
+		<video
+		 ref={videoRef}
+		 muted
+		 playsInline
+		 preload="auto"
+		 src="/videos/final_optimized.mp4"
+		/>
+	 </div>
+	</>
+ );
+};
 
-export default Hero
+export default Hero;

@@ -18,57 +18,57 @@ const navLinks = [
 ];
 
 const cocktailLists = [
- {
-	name: "Chapel Hill Shiraz",
-	country: "AU",
-	detail: "Battle",
-	price: "$10",
- },
- {
-	name: "Caten Malbee",
-	country: "AU",
-	detail: "Battle",
-	price: "$49",
- },
- {
-	name: "Rhino Pale Ale",
-	country: "CA",
-	detail: "750 ml",
-	price: "$20",
- },
- {
-	name: "Irish Guinness",
-	country: "IE",
-	detail: "600 ml",
-	price: "$29",
- },
+  {
+    name: "Nano-Ceramic Coating ",
+    country: "DE",
+    detail: "Sedan/SUV",
+    price: "AED 899",
+  },
+  {
+    name: "Full Body Paint Protection Film",
+    country: "US",
+    detail: "Full Body",
+    price: "AED 3,999",
+  },
+  {
+    name: "Premium Car Wrapping",
+    country: "US",
+    detail: "Full Body",
+    price: "AED 4,500",
+  },
+  {
+    name: "Graphene Coating Upgrade",
+    country: "KR",
+    detail: "Sedan/SUV",
+    price: "AED 1,299",
+  },
 ];
 
 const mockTailLists = [
  {
-	name: "Tropical Bloom",
-	country: "US",
-	detail: "Battle",
-	price: "$10",
- },
- {
-	name: "Passionfruit Mint",
-	country: "US",
-	detail: "Battle",
-	price: "$49",
- },
- {
-	name: "Citrus Glow",
-	country: "CA",
-	detail: "750 ml",
-	price: "$20",
- },
- {
-	name: "Lavender Fizz",
-	country: "IE",
-	detail: "600 ml",
-	price: "$29",
- },
+    name: "Nano-Ceramic Window Tinting",
+    country: "US",
+    detail: "Full Car",
+    price: "AED 699",
+  },
+  {
+    name: "Headlight Restoration",
+    country: "JP",
+    detail: "Pair",
+    price: "AED 199",
+  },
+  {
+    name: "Paintless Dent Repair",
+    country: "DE",
+    detail: "Per Panel",
+    price: "AED 250",
+  },
+  {
+    name: "Express Detail Wash",
+    country: "AU",
+    detail: "Sedan/SUV",
+    price: "AED 89",
+  },
 ];
 
 const profileLists = [

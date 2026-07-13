@@ -28,36 +28,36 @@ body {
     @apply flex justify-center items-center;
 }
 
-@utility col-center {
-    @apply flex flex-col justify-center items-center;
-}
+    @utility col-center {
+        @apply flex flex-col justify-center items-center;
+    }
 
-@utility abs-center {
-    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
-}
+    @utility abs-center {
+        @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+    }
 
-@utility text-gradient {
+     @utility text-gradient {
     background: linear-gradient(to bottom, #ffffff, #898989);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-}
+           }
 
-@utility radial-gradient {
-    background: radial-gradient(
-            circle at center,
-            #434343 0%,
-            #000 50%,
-            transparent 100%
-    );
-}
+    @utility radial-gradient {
+        background: radial-gradient(
+                circle at center,
+                #434343 0%,
+                #000 50%,
+                transparent 100%
+        );
+    }
 
-@utility masked-img {
-    mask-image: url("/images/mask-img.png");
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: 50%;
-}
+    @utility masked-img {
+        mask-image: url("/images/mask-img.png");
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: 50%;
+    }
 
 @layer components {
     main {
@@ -132,8 +132,17 @@ body {
         }
     }
 
+    .video {
+        transform: translateZ(0);
+        will-change: transform;
+        backface-visibility: hidden;
+    }
+
     video {
         @apply w-full md:h-[80%] h-1/2 absolute bottom-0 left-0 md:object-contain object-bottom object-cover;
+        transform: translateZ(0);
+        will-change: auto;
+        backface-visibility: hidden;
     }
 
     #cocktails {
