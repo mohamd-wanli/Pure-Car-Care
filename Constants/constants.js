@@ -87,17 +87,17 @@ const profileLists = [
 ];
 
 const featureLists = [
- "Perfectly balanced blends",
- "Garnished to perfection",
- "Ice-cold every time",
- "Expertly shaken & stirred",
+  "Perfectly balanced finishes",
+  "Buffed to perfection",
+  "Streak-free every time",
+  "Expertly polished & protected",
 ];
 
 const goodLists = [
- "Handpicked ingredients",
- "Signature techniques",
- "Bartending artistry in action",
- "Freshly muddled flavors",
+  "Premium grade formulas",
+  "Signature detailing techniques",
+  "Craftsmanship in action",
+  "Deeply restored surfaces",
 ];
 
 const storeInfo = {
