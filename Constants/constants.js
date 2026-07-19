@@ -1,20 +1,20 @@
 const navLinks = [
- {
-	id: "cocktails",
-	title: "Cocktails",
- },
- {
-	id: "about",
-	title: "About Us",
- },
- {
-	id: "work",
-	title: "The Art",
- },
- {
-	id: "contact",
-	title: "Contact",
- },
+  {
+    id: "cocktails",
+    title: "Cocktails",
+  },
+  {
+    id: "about",
+    title: "About Us",
+  },
+  {
+    id: "work",
+    title: "Our Work",
+  },
+  {
+    id: "contact",
+    title: "Contact",
+  },
 ];
 
 const cocktailLists = [
@@ -45,7 +45,7 @@ const cocktailLists = [
 ];
 
 const mockTailLists = [
- {
+  {
     name: "Nano-Ceramic Window Tinting",
     country: "US",
     detail: "Full Car",
@@ -72,18 +72,18 @@ const mockTailLists = [
 ];
 
 const profileLists = [
- {
-	imgPath: "/images/profile1.png",
- },
- {
-	imgPath: "/images/profile2.png",
- },
- {
-	imgPath: "/images/profile3.png",
- },
- {
-	imgPath: "/images/profile4.png",
- },
+  {
+    imgPath: "/images/profile1.png",
+  },
+  {
+    imgPath: "/images/profile2.png",
+  },
+  {
+    imgPath: "/images/profile3.png",
+  },
+  {
+    imgPath: "/images/profile4.png",
+  },
 ];
 
 const featureLists = [
@@ -101,83 +101,109 @@ const goodLists = [
 ];
 
 const storeInfo = {
- heading: "Where to Find Us",
- address: "456, Raq Blvd. #404, Los Angeles, CA 90210",
- contact: {
-	phone: "(555) 987-6543",
-	email: "hello@jsmcocktail.com",
- },
+  heading: "Where to Find Us",
+  address: "456, Raq Blvd. #404, Los Angeles, CA 90210",
+  contact: {
+    phone: "(555) 987-6543",
+    email: "hello@jsmcocktail.com",
+  },
 };
 
 const openingHours = [
- { day: "Mon–Thu", time: "11:00am – 12am" },
- { day: "Fri", time: "11:00am – 2am" },
- { day: "Sat", time: "9:00am – 2am" },
- { day: "Sun", time: "9:00am – 1am" },
+  { day: "Mon–Thu", time: "11:00am – 12am" },
+  { day: "Fri", time: "11:00am – 2am" },
+  { day: "Sat", time: "9:00am – 2am" },
+  { day: "Sun", time: "9:00am – 1am" },
 ];
 
 const socials = [
- {
-	name: "Instagram",
-	icon: "/images/insta.png",
-	url: "#",
- },
- {
-	name: "X (Twitter)",
-	icon: "/images/x.png",
-	url: "#",
- },
- {
-	name: "Facebook",
-	icon: "/images/fb.png",
-	url: "#",
- },
+  {
+    name: "Instagram",
+    icon: "/images/insta.png",
+    url: "#",
+  },
+  {
+    name: "X (Twitter)",
+    icon: "/images/x.png",
+    url: "#",
+  },
+  {
+    name: "Facebook",
+    icon: "/images/fb.png",
+    url: "#",
+  },
 ];
 
 const sliderLists = [
- {
-	id: 1,
-	name: "Classic Mojito",
-	image: "/images/drink1.png",
-	title: "Simple Ingredients, Bold Flavor",
-	description:
-	 "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
- },
- {
-	id: 2,
-	name: "Raspberry Mojito",
-	image: "/images/drink2.png",
-	title: "A Zesty Classic That Never Fails",
-	description:
-	 "The Margarita is a classic that balances tangy lime, smooth tequila, and a touch of sweetness. Shaken, frozen, or on the rocks—it’s always crisp & refreshing.",
- },
- {
-	id: 3,
-	name: "Violet Breeze",
-	image: "/images/drink3.png",
-	title: "Simple Ingredients, Bold Flavor",
-	description:
-	 "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
- },
- {
-	id: 4,
-	name: "Curacao Mojito",
-	image: "/images/drink4.png",
-	title: "Crafted With Care, Poured With Love",
-	description:
-	 "Each cocktail is made with fresh ingredients and a passion for perfecting every pour, whether you're celebrating or simply relaxing.",
- },
+  // {
+  //   id: 1,
+  //   name: "Window Tinting",
+  //   image: "/images/drink1.png",
+  //   title: "Window Tinting",
+  //   description:
+  //     "Nano-Ceramic Tint, crystal clear from inside & dark from outside. Stay cool & safe with 99% IR & UV heat rejection designed specifically for UAE climate.",
+  // },
+  {
+    id: 1,
+    name: "Ceramic Coating",
+    image: "/images/ciramic.jpeg",
+    title: "Mirror-like gloss and protection",
+    description:
+      "Best in class Ceramic Coating with mirror-like finish providing ultimate shine & protection with 10H Technology.",
+  },
+  {
+    id: 2,
+    name: "Paint-Protection Film",
+    image: "/images/ppf.jpeg",
+    title: "Invisible armor for your car",
+    description:
+      "Ultimate paint protection with transparent film shielding car paint from UV light, road debris & sand with life-time warranty.",
+  },
+  {
+    id: 3,
+    name: "Car Polish",
+    image: "/images/polish.jpeg",
+    title: "Restore Deep Gloss & Remove Imperfections",
+    description:
+      "Advanced compounding and polishing formula designed to eliminate swirl marks, light scratches, and oxidation, restoring a mirror-like depth to your paintwork.",
+  },
+
+  {
+    id: 4,
+    name: "Architectural Window Tinting",
+    image: "/images/window tinting shops.jpeg",
+    title: "Villas & Shops Windows Tinting",
+    description:
+      "enjoy cooler spaces with our best window tints for villas & shops, preventing 99% of the harmful UV light and providing our best heat rejection technologies.",
+  },
+  {
+    id: 5,
+    name: "Headlight Restoration",
+    image: "/images/headlight.jpeg",
+    title: "Restore Crystal Clear Clarity",
+    description:
+      "Crystal clear headlights restoration to its original showroom spark.",
+  },
+{ 
+  id: 6, 
+  name: "Interior Detailing", 
+  image: "/images/detail.jpeg", 
+  title: "Deep Cabin Cleaning", 
+  description: "Deep interior rejuvenation targeting every crack and crevice, removing deep-set dirt, stains, and odors to restore a brand-new cabin feel." 
+}
+
+
 ];
 
 export {
- navLinks,
- cocktailLists,
- mockTailLists,
- profileLists,
- featureLists,
- goodLists,
- openingHours,
- storeInfo,
- socials,
- sliderLists,
+  navLinks,
+  cocktailLists,
+  mockTailLists,
+  profileLists,
+  featureLists,
+  goodLists,
+  openingHours,
+  storeInfo,
+  socials,
+  sliderLists,
 };
