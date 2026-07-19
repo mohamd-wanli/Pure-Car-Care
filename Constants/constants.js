@@ -120,17 +120,22 @@ const socials = [
   {
     name: "Instagram",
     icon: "/images/insta.png",
-    url: "#",
+    url: "https://www.instagram.com/purecarcare.ae?igsh=eWptMzl5Z2NseTFi&utm_source=qr",
   },
   {
-    name: "X (Twitter)",
-    icon: "/images/x.png",
-    url: "#",
+    name: "SnapChat",
+    icon: "/images/Snapchat.png",
+    url: "https://snapchat.com/t/HaD93hfX",
   },
   {
     name: "Facebook",
     icon: "/images/fb.png",
-    url: "#",
+    url: "https://www.facebook.com/profile.php?id=61576219362318&mibextid=wwXIfr&rdid=Ki4szVxJYqFvYj8A&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1FjaJyxKxR%2F%3Fmibextid%3DwwXIfr#",
+  },
+   {
+    name: "TikTok",
+    icon: "/images/tic.png",
+    url: "https://www.tiktok.com/@purecarcare.ae?_t=ZS-90UUIBq0d4U&_r=1",
   },
 ];
 
@@ -184,15 +189,14 @@ const sliderLists = [
     description:
       "Crystal clear headlights restoration to its original showroom spark.",
   },
-{ 
-  id: 6, 
-  name: "Interior Detailing", 
-  image: "/images/detail.jpeg", 
-  title: "Deep Cabin Cleaning", 
-  description: "Deep interior rejuvenation targeting every crack and crevice, removing deep-set dirt, stains, and odors to restore a brand-new cabin feel." 
-}
-
-
+  {
+    id: 6,
+    name: "Interior Detailing",
+    image: "/images/detail.jpeg",
+    title: "Deep Cabin Cleaning",
+    description:
+      "Deep interior rejuvenation targeting every crack and crevice, removing deep-set dirt, stains, and odors to restore a brand-new cabin feel.",
+  },
 ];
 
 export {
