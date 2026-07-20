@@ -525,10 +525,20 @@ body {
           @apply text-sm text-white/70 mb-6;
         }
 
+        .desktop-call-note {
+          @apply hidden;
+        }
+
         .phone-call {
-          @apply inline-flex items-center gap-3 bg-yellow text-black px-6 py-4 rounded-full font-semibold transition-all duration-200 ease-out shadow-lg shadow-yellow/20;
+          @apply relative inline-flex items-center justify-center bg-yellow text-black px-6 py-4 rounded-full font-semibold transition-all duration-200 ease-out shadow-lg shadow-yellow/20 overflow-hidden select-none;
           text-decoration: none;
-          cursor: pointer;
+          cursor: grab;
+          touch-action: none;
+          min-height: 3rem;
+        }
+
+        .phone-call.dragging {
+          cursor: grabbing;
         }
 
         .phone-call:hover {
@@ -536,13 +546,62 @@ body {
           @apply bg-yellow/95;
         }
 
-        .phone-icon {
-          @apply flex items-center justify-center w-12 h-12 rounded-full bg-white/10 transition-transform duration-200 ease-out;
+        .phone-label {
+          @apply relative z-10 pointer-events-none;
         }
 
-        .phone-call:active .phone-icon {
-          transform: translateX(10px);
+        .phone-icon {
+          @apply absolute left-2 top-1/2 -translate-y-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-white/90 shadow-md transition-transform duration-200 ease-out z-20;
         }
+
+        .phone-icon img {
+          @apply w-6 h-6 text-black;
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      .contact-blocks {
+        @apply justify-end;
+      }
+
+      .contact-card {
+        @apply max-w-2xl p-10 rounded-[1.75rem];
+        background-image: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.12),
+          rgba(255, 255, 255, 0.04)
+        );
+      }
+
+      .contact-card .card-heading h3 {
+        @apply flex-col items-start text-3xl;
+      }
+
+      .contact-card .contact-number {
+        @apply text-[1.6rem];
+      }
+
+      .contact-card .contact-note {
+        @apply mb-0;
+      }
+
+      .contact-card .phone-call {
+        @apply hidden;
+      }
+
+      .contact-card .desktop-call-note {
+        @apply block text-sm text-white/70 mt-2;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .contact-card .phone-call {
+        @apply inline-flex;
+      }
+
+      .contact-card .desktop-call-note {
+        @apply hidden;
       }
     }
   }

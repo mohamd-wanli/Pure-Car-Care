@@ -2,8 +2,16 @@ import { socials } from "../../Constants/constants";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
+import { useEffect, useRef, useState } from "react";
 
 const Contact = () => {
+  const [dragX, setDragX] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [maxDrag, setMaxDrag] = useState(96);
+  const trackRef = useRef(null);
+  const startXRef = useRef(0);
+  const startOffsetRef = useRef(0);
+  const dragXRef = useRef(0);
   useGSAP(() => {
     const titleSplit = SplitText.create("#contact h2", { type: "words" });
 
@@ -27,6 +35,60 @@ const Contact = () => {
         stagger: 0.02,
       });
   });
+
+  useEffect(() => {
+    const updateMaxDrag = () => {
+      if (trackRef.current) {
+        const trackWidth = trackRef.current.clientWidth;
+        setMaxDrag(Math.max(72, trackWidth - 56));
+      }
+    };
+
+    updateMaxDrag();
+    window.addEventListener("resize", updateMaxDrag);
+
+    return () => window.removeEventListener("resize", updateMaxDrag);
+  }, []);
+
+  const handleCall = () => {
+    window.location.href = "tel:+971565679597";
+  };
+
+  const startDrag = (event) => {
+    event.preventDefault();
+    setIsDragging(true);
+    startXRef.current = event.clientX;
+    startOffsetRef.current = dragX;
+    event.currentTarget.setPointerCapture(event.pointerId);
+  };
+
+  const moveDrag = (event) => {
+    if (!isDragging) return;
+
+    const nextX = startOffsetRef.current + event.clientX - startXRef.current;
+    const clampedX = Math.max(0, Math.min(maxDrag, nextX));
+    dragXRef.current = clampedX;
+    setDragX(clampedX);
+  };
+
+  const endDrag = (event) => {
+    if (!isDragging) return;
+
+    setIsDragging(false);
+
+    const finalX = dragXRef.current;
+
+    if (finalX >= maxDrag * 0.75) {
+      handleCall();
+    } else {
+      dragXRef.current = 0;
+      setDragX(0);
+    }
+
+    if (event?.currentTarget?.hasPointerCapture?.(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+  };
 
   return (
     <footer id="contact">
@@ -64,16 +126,31 @@ const Contact = () => {
               أفضل خدمة تنظيف وصيانة للسيارات في دبي.
             </p>
 
-            <a
-              className="phone-call"
-              href="tel:+971565679597"
-              aria-label="Call 00971565679597"
+            <div
+              ref={trackRef}
+              className={`phone-call ${isDragging ? "dragging" : ""}`}
+              role="button"
+              tabIndex={0}
+              aria-label="Swipe to call"
+              onPointerDown={startDrag}
+              onPointerMove={moveDrag}
+              onPointerUp={endDrag}
+              onPointerCancel={endDrag}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  handleCall();
+                }
+              }}
             >
-              <span className="phone-icon">
-                <img src="/images/x.png" alt="phone icon" />
+              <span
+                className="phone-icon"
+                style={{ transform: `translateX(${dragX}px)` }}
+              >
+                <img src="/images/call.svg" alt="phone icon" />
               </span>
-              <span>اسحب للاتصال</span>
-            </a>
+              <span className="phone-label">اسحب للاتصال</span>
+            </div>
           </div>
         </div>
 
