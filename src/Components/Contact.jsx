@@ -93,9 +93,10 @@ const Contact = () => {
   };
 
   return (
-    <footer id="contact" key={isArabic ? "ar" : "en"}>
+    <footer id="contact">
       <div className="content">
-        <h2>{isArabic ? "أين تجدنا" : "Where to Find Us"}</h2>
+        <h2 className="en-only">Where to Find Us</h2>
+        <h2 className="ar-only">أين تجدنا</h2>
 
         <div className="contact-map">
           <iframe

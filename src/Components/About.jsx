@@ -38,36 +38,28 @@ const About = () => {
   }, [isArabic]);
 
   return (
-    <div id="about" key={isArabic ? "ar" : "en"}>
+    <div id="about" >
       <div className="mb-16 md:px-0 px-5">
         <div className="content">
           <div className="md:col-span-8">
             <p className="badge">
               {isArabic ? "أفضل الخدمات" : "Best Services"}
             </p>
-            <h2>
-              {isArabic ? (
-                <>
-                  حيث كل التفاصيل مهمة <span className="text-white">-</span> من
-                  التحضير إلى الحماية
-                </>
-              ) : (
-                <>
-                  Where every detail matters{" "}
-                  <span className="text-white">-</span>
-                  from prep to protection
-                </>
-              )}
+            <h2 className="en-only">
+              Where every detail matters <span className="text-white">-</span>
+              from prep to protection
+            </h2>
+            <h2 className="ar-only">
+              حيث كل التفاصيل مهمة <span className="text-white">-</span> من
+              التحضير إلى الحماية
             </h2>
           </div>
 
           <div className="sub-content">
             <p>
-              
-                {isArabic
-                  ? "كل خدمة نقدمها تعكس شغفنا بالتفاصيل — من التحضير الأولي إلى طبقة الحماية النهائية. هذا الاهتمام هو ما يحول الصيانة الروتينية إلى تجربة قيادة استثنائية."
-                  : "Every service we perform is a reflection of our obsession with detail — from the initial prep to the final protective coat. That care is what turns routine maintenance into an elite driving experience."}
-              
+              {isArabic
+                ? "كل خدمة نقدمها تعكس شغفنا بالتفاصيل — من التحضير الأولي إلى طبقة الحماية النهائية. هذا الاهتمام هو ما يحول الصيانة الروتينية إلى تجربة قيادة استثنائية."
+                : "Every service we perform is a reflection of our obsession with detail — from the initial prep to the final protective coat. That care is what turns routine maintenance into an elite driving experience."}
             </p>
 
             <div>

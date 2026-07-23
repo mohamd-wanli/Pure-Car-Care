@@ -13,6 +13,7 @@
   --font-sans: "Mona Sans", sans-serif;
   --font-modern-negra: "Modern Negra", sans-serif;
   --font-serif: "DM Serif Text", serif;
+  --font-arabic: "Tajawal", sans-serif;
 }
 /* Store location map */
 .map-frame {
@@ -121,6 +122,52 @@ body {
 .lang-ar .font-sans {
   font-family: var(--font-arabic);
 }
+
+.lang-en .ar-only {
+  display: none !important;
+}
+
+.lang-ar .en-only {
+  display: none !important;
+}
+
+/* 
+.lang-ar .view-cocktails p {
+  text-align: right !important;
+}
+
+.lang-ar #hero .body .content .view-cocktails a {
+  text-align: right;
+}
+
+.lang-ar #menu .recipe .details {
+  text-align: right;
+}
+
+.lang-ar #menu .recipe .details p {
+  padding-right: 0;
+  padding-left: 1.25rem;
+}
+
+.lang-ar #contact .contact-card {
+  text-align: right;
+}
+
+.lang-ar #contact .contact-card .card-heading h3 {
+  flex-direction: row-reverse;
+}
+
+.lang-ar #about .content .sub-content p {
+  text-align: right;
+}
+
+.lang-ar #work .content ul li {
+  flex-direction: row-reverse;
+}
+
+.lang-ar #work .content ul li p {
+  text-align: right;
+}  */
 
 @utility flex-center {
   @apply flex justify-center items-center;

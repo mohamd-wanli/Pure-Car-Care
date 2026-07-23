@@ -11,11 +11,11 @@ const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   useGSAP(() => {
-    const heroSplit = new SplitText(".title", {
+    const heroSplit =  SplitText.create(".title", {
       type: "chars, words",
     });
 
-    const paragraphSplit = new SplitText(".subtitle", {
+    const paragraphSplit =  SplitText.create(".subtitle", {
       type: "lines",
     });
 
@@ -38,18 +38,14 @@ const Hero = () => {
       delay: 1,
     });
 
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#hero",
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-      })
-      .to(".right-leaf", { y: 200 }, 0)
-      .to(".left-leaf", { y: -200 }, 0)
-      .to(".arrow", { y: 100 }, 0);
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: "#hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
 
     const video = videoRef.current;
 
@@ -80,10 +76,10 @@ const Hero = () => {
         once: true,
       });
     }
-  }, [isMobile, isArabic]);
+  }, [isMobile]);
 
   return (
-    <Fragment key={isArabic ? "ar" : "en"}>
+    <>
       <section id="hero" className="noisy">
         <h1 className="title">PURE</h1>
 
@@ -91,31 +87,31 @@ const Hero = () => {
           <div className="content">
             <div className="space-y-5">
               <p className="text-yellow font-semibold">
-                {isArabic ? "غسيل. حماية. كمال." : "Wash. Protect. Perfection."}
+                <span className="en-only">Wash. Protect. Perfection.</span>
+                <span className="ar-only">غسيل. حماية. كمال.</span>
               </p>
               <p className="subtitle">
-                {isArabic ? (
-                  <>
-                    استمتع بفخامة العناية الفائقة <br /> بسيارتك
-                  </>
-                ) : (
-                  <>
-                    {" "}
-                    Experience the <span className="text-yellow">
-                      Luxury
-                    </span>{" "}
-                    <br /> of{" "}
-                    <span className="text-yellow">Elite Car Care</span>{" "}
-                  </>
-                )}
+                <span className="en-only">
+                  Experience the Luxury <br /> of Elite Car Care
+                </span>
+                <span className="ar-only">
+                  استمتع بفخامة العناية الفائقة <br /> بسيارتك
+                </span>
               </p>
             </div>
 
             <div className="view-cocktails">
               <p className="subtitle">
-                {isArabic
-                  ? '"كل عملية عناية في مركزنا هي مزيج من تركيبات متطورة، وخبرة احترافية، وشغف لا يتوقف — مصممة لاستعادة وحماية بريق سيارتك كما في المعرض."'
-                  : '"Every treatment in our garage is a blend of advanced formulations, expert care, and relentless passion — designed to restore and protect your vehicle\'s showroom shine."'}
+                <span className="en-only">
+                  "Every treatment in our garage is a blend of advanced
+                  formulations, expert care, and relentless passion — designed
+                  to restore and protect your vehicle's showroom shine."
+                </span>
+                <span className="ar-only">
+                  "كل عملية عناية في مركزنا هي مزيج من تركيبات متطورة، وخبرة
+                  احترافية، وشغف لا يتوقف — مصممة لاستعادة وحماية بريق سيارتك
+                  كما في المعرض."
+                </span>
               </p>
               <a
                 className="text-yellow font-semibold hover:text-white"
@@ -137,7 +133,7 @@ const Hero = () => {
           src="/videos/drift_detailed.mp4"
         />
       </div>
-    </Fragment>
+    </>
   );
 };
 

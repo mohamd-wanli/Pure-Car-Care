@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const LanguageContext = createContext({
   language: "en",
@@ -13,6 +13,10 @@ export const LanguageProvider = ({ children }) => {
   const toggleLanguage = () => {
     setLanguage((prev) => (prev === "en" ? "ar" : "en"));
   };
+
+  useEffect(() => {
+    document.documentElement.lang = isArabic ? "ar" : "en";
+  }, [isArabic]);
 
   return (
     <LanguageContext.Provider value={{ language, isArabic, toggleLanguage }}>
