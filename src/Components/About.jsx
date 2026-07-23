@@ -29,7 +29,7 @@ const About = () => {
 	 <div className="mb-16 md:px-0 px-5">
 		<div className="content">
 		 <div className="md:col-span-8">
-			<p className="badge">Best Cocktails</p>
+			<p className="badge">Best Services</p>
 			<h2>
 			 Where every detail matters <span className="text-white">-</span>
 				 from prep to protection

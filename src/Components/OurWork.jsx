@@ -69,7 +69,7 @@ const OurWork = () => {
 			 href="https://www.instagram.com/purecarcare.ae?igsh=eWptMzl5Z2NseTFi&utm_source=qr"
 			 target="_blank"
 			 rel="noreferrer"
-			 className="mt-4 ml-55 inline-block rounded-full bg-white px-6 py-3 text-sm font-semibold text-black opacity-0"
+			 className="mt-4 ml-55 inline-block rounded-full bg-yellow px-6 py-3 text-sm font-semibold text-black opacity-0"
 			>
 			  Follow on Instagram
 			</a>

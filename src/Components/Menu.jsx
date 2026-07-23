@@ -54,7 +54,7 @@ const Menu = () => {
   return (
     <section id="menu">
       <h2 id="menu-heading" className="sr-only">
-        Cocktail Menu
+        Service Menu
       </h2>
       <nav className="cocktail-tabs" aria-label="Cocktail Navigation">
         {sliderLists.map((service, index) => {
