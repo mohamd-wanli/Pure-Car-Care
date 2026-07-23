@@ -3,10 +3,11 @@ import { sliderLists } from "../../Constants/constants";
 import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-
+import { useLanguage } from "../../Context/LanguageContext";
 const Menu = () => {
   const contentRef = useRef();
   const [currentIndex, setcurrentIndex] = useState(0);
+  const { isArabic } = useLanguage();
   useGSAP(() => {
     gsap.fromTo("#title", { opacit: 0 }, { opacity: 1, duration: 1 });
     gsap.fromTo(
@@ -54,7 +55,7 @@ const Menu = () => {
   return (
     <section id="menu">
       <h2 id="menu-heading" className="sr-only">
-        Service Menu
+        {isArabic ? "قائمة الخدمات" : "Services Menu"}
       </h2>
       <nav className="cocktail-tabs" aria-label="Cocktail Navigation">
         {sliderLists.map((service, index) => {
@@ -69,7 +70,7 @@ const Menu = () => {
               }`}
               onClick={() => goToSlide(index)}
             >
-              {service.name}
+              {isArabic ? service.nameAr : service.name}
             </button>
           );
         })}
@@ -80,7 +81,7 @@ const Menu = () => {
             className="text-left"
             onClick={() => goToSlide(currentIndex - 1)}
           >
-            <span>{prevService.name}</span>
+            <span>{isArabic ? prevService.nameAr : prevService.name}</span>
             <img
               src="/images/right-arrow.png"
               alt="right-arrow"
@@ -92,7 +93,7 @@ const Menu = () => {
             className="text-left"
             onClick={() => goToSlide(currentIndex + 1)}
           >
-            <span>{nextService.name}</span>
+            <span>{isArabic ? nextService.nameAr : nextService.name}</span>
             <img
               src="/images/left-arrow.png"
               alt="left-arrow"
@@ -105,13 +106,19 @@ const Menu = () => {
         </div>
         <div className="recipe">
           <div ref={contentRef} className="info">
-            <p>Recipe for:</p>
-            <p id="title">{currentService.name}</p>
+            <p>{isArabic ? "تفاصيل عن:" : "Details for:"}</p>
+            <p id="title">
+              {isArabic ? currentService.nameAr : currentService.name}
+            </p>
           </div>
 
           <div className="details">
-            <h2>{currentService.title}</h2>
-            <p>{currentService.description}</p>
+            <h2>{isArabic ? currentService.titleAr : currentService.title}</h2>
+            <p>
+              {isArabic
+                ? currentService.descriptionAr
+                : currentService.description}
+            </p>
           </div>
         </div>
       </div>

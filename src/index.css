@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap");
 @import "tailwindcss";
 
 @font-face {
@@ -112,6 +112,15 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+.lang-ar {
+  font-family: var(--font-arabic);
+}
+
+.lang-ar .font-modern-negra,
+.lang-ar .font-serif,
+.lang-ar .font-sans {
+  font-family: var(--font-arabic);
+}
 
 @utility flex-center {
   @apply flex justify-center items-center;
@@ -175,6 +184,9 @@ body {
     ul {
       @apply flex-center lg:gap-12 gap-7;
     }
+    .lang-toggle {
+      @apply cursor-pointer text-nowrap text-sm md:text-base font-semibold text-white border border-white/40 rounded-full px-4 py-1.5 hover:bg-white hover:text-black transition-colors duration-200;
+    }
   }
 
   .noisy {
@@ -185,7 +197,7 @@ body {
     @apply relative z-10 min-h-dvh w-full border border-transparent;
 
     h1 {
-      @apply md:mt-32 mt-40 text-8xl md:text-[20vw] leading-none text-center font-modern-negra ;
+      @apply md:mt-32 mt-40 text-8xl md:text-[20vw] leading-none text-center font-modern-negra;
     }
 
     .body {
@@ -234,8 +246,6 @@ body {
 
   #cocktails {
     @apply relative min-h-dvh w-full overflow-hidden;
-
-  
 
     .list {
       @apply container mx-auto relative z-10 flex md:flex-row flex-col justify-between items-start gap-20 pt-40 2xl:px-0 px-5;
@@ -366,8 +376,6 @@ body {
 
   #menu {
     @apply relative w-full md:mt-40 mt-0 2xl:px-0 px-5 py-20 radial-gradient;
-
-   
 
     .cocktail-tabs {
       @apply grid md:grid-cols-4 grid-cols-2 md:gap-20 gap-10 sm:mb-32 mb-20 relative z-10 md:max-w-6xl md:mx-auto;

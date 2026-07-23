@@ -2,87 +2,22 @@ const navLinks = [
   {
     id: "menu",
     title: "Menu",
+    titleAr: "القائمة",
   },
   {
     id: "about",
     title: "About Us",
+    titleAr: "من نحن",
   },
   {
     id: "work",
     title: "Our Work",
+    titleAr: "أعمالنا",
   },
   {
     id: "contact",
     title: "Contact",
-  },
-];
-
-const cocktailLists = [
-  {
-    name: "Nano-Ceramic Coating ",
-    country: "DE",
-    detail: "Sedan/SUV",
-    price: "AED 899",
-  },
-  {
-    name: "Full Body Paint Protection Film",
-    country: "US",
-    detail: "Full Body",
-    price: "AED 3,999",
-  },
-  {
-    name: "Premium Car Wrapping",
-    country: "US",
-    detail: "Full Body",
-    price: "AED 4,500",
-  },
-  {
-    name: "Graphene Coating Upgrade",
-    country: "KR",
-    detail: "Sedan/SUV",
-    price: "AED 1,299",
-  },
-];
-
-const mockTailLists = [
-  {
-    name: "Nano-Ceramic Window Tinting",
-    country: "US",
-    detail: "Full Car",
-    price: "AED 699",
-  },
-  {
-    name: "Headlight Restoration",
-    country: "JP",
-    detail: "Pair",
-    price: "AED 199",
-  },
-  {
-    name: "Paintless Dent Repair",
-    country: "DE",
-    detail: "Per Panel",
-    price: "AED 250",
-  },
-  {
-    name: "Express Detail Wash",
-    country: "AU",
-    detail: "Sedan/SUV",
-    price: "AED 89",
-  },
-];
-
-const profileLists = [
-  {
-    imgPath: "/images/profile1.png",
-  },
-  {
-    imgPath: "/images/profile2.png",
-  },
-  {
-    imgPath: "/images/profile3.png",
-  },
-  {
-    imgPath: "/images/profile4.png",
+    titleAr: "تواصل معنا",
   },
 ];
 
@@ -92,7 +27,12 @@ const featureLists = [
   "Streak-free every time",
   "Expertly polished & protected",
 ];
-
+const featureListsAr = [
+  "لمسات نهائية متوازنة بدقة",
+  "تلميع بمستوى الاحتراف",
+  "نتيجة نظيفة بدون خطوط في كل مرة",
+  "تلميع وحماية بخبرة عالية",
+];
 const goodLists = [
   "Premium grade formulas",
   "Signature detailing techniques",
@@ -100,20 +40,11 @@ const goodLists = [
   "Deeply restored surfaces",
 ];
 
-const storeInfo = {
-  heading: "Where to Find Us",
-  address: "456, Raq Blvd. #404, Los Angeles, CA 90210",
-  contact: {
-    phone: "(555) 987-6543",
-    email: "hello@jsmcocktail.com",
-  },
-};
-
-const openingHours = [
-  { day: "Mon–Thu", time: "11:00am – 12am" },
-  { day: "Fri", time: "11:00am – 2am" },
-  { day: "Sat", time: "9:00am – 2am" },
-  { day: "Sun", time: "9:00am – 1am" },
+const goodListsAr = [
+  "تركيبات ذات جودة فاخرة",
+  "تقنيات تنظيف مميزة",
+  "حرفية في كل التفاصيل",
+  "أسطح مُستعادة بعمق",
 ];
 
 const socials = [
@@ -132,7 +63,7 @@ const socials = [
     icon: "/images/fb.png",
     url: "https://www.facebook.com/profile.php?id=61576219362318&mibextid=wwXIfr&rdid=Ki4szVxJYqFvYj8A&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1FjaJyxKxR%2F%3Fmibextid%3DwwXIfr#",
   },
-   {
+  {
     name: "TikTok",
     icon: "/images/tic.png",
     url: "https://www.tiktok.com/@purecarcare.ae?_t=ZS-90UUIBq0d4U&_r=1",
@@ -140,74 +71,78 @@ const socials = [
 ];
 
 const sliderLists = [
-  // {
-  //   id: 1,
-  //   name: "Window Tinting",
-  //   image: "/images/drink1.png",
-  //   title: "Window Tinting",
-  //   description:
-  //     "Nano-Ceramic Tint, crystal clear from inside & dark from outside. Stay cool & safe with 99% IR & UV heat rejection designed specifically for UAE climate.",
-  // },
   {
     id: 1,
     name: "Ceramic Coating",
+    nameAr: "طلاء السيراميك",
     image: "/images/ciramic.jpeg",
     title: "Mirror-like gloss and protection",
+    titleAr: "لمعان يشبه المرآة وحماية فائقة",
     description:
       "Best in class Ceramic Coating with mirror-like finish providing ultimate shine & protection with 10H Technology.",
+    descriptionAr:
+      "أفضل طلاء سيراميك في فئته يمنح لمعانًا يشبه المرآة وحماية قصوى بتقنية 10H.",
   },
   {
     id: 2,
     name: "Paint-Protection Film",
+    nameAr: "فيلم حماية الطلاء",
     image: "/images/ppf.jpeg",
     title: "Invisible armor for your car",
+    titleAr: "درع غير مرئي لسيارتك",
     description:
       "Ultimate paint protection with transparent film shielding car paint from UV light, road debris & sand with life-time warranty.",
+    descriptionAr:
+      "حماية فائقة للطلاء بفيلم شفاف يحمي طلاء سيارتك من أشعة الشمس والحصى والرمال، مع ضمان مدى الحياة.",
   },
   {
     id: 3,
     name: "Car Polish",
+    nameAr: "تلميع السيارة",
     image: "/images/polish.jpeg",
     title: "Restore Deep Gloss & Remove Imperfections",
+    titleAr: "استعادة اللمعان العميق وإزالة العيوب",
     description:
       "Advanced compounding and polishing formula designed to eliminate swirl marks, light scratches, and oxidation, restoring a mirror-like depth to your paintwork.",
+    descriptionAr:
+      "تركيبة تلميع متقدمة مصممة للقضاء على آثار الدوامات والخدوش الخفيفة والأكسدة، لتعيد لطلاء سيارتك عمقه اللامع.",
   },
-
   {
     id: 4,
     name: "Architectural Window Tinting",
+    nameAr: "تظليل نوافذ المباني",
     image: "/images/window tinting shops.jpeg",
     title: "Villas & Shops Windows Tinting",
+    titleAr: "تظليل نوافذ الفلل والمحلات",
     description:
       "enjoy cooler spaces with our best window tints for villas & shops, preventing 99% of the harmful UV light and providing our best heat rejection technologies.",
+    descriptionAr:
+      "استمتع بأجواء أكثر برودة مع أفضل تظليل نوافذ للفلل والمحلات، يمنع 99٪ من الأشعة فوق البنفسجية الضارة ويوفر أفضل تقنيات عزل الحرارة.",
   },
   {
     id: 5,
     name: "Headlight Restoration",
+    nameAr: "ترميم المصابيح الأمامية",
     image: "/images/headlight.jpeg",
     title: "Restore Crystal Clear Clarity",
+    titleAr: "استعادة الوضوح الكريستالي",
     description:
       "Crystal clear headlights restoration to its original showroom spark.",
+    descriptionAr:
+      "ترميم المصابيح الأمامية لتعود بوضوح كريستالي كما في المعرض.",
   },
   {
     id: 6,
     name: "Interior Detailing",
+    nameAr: "تنظيف المقصورة الداخلية",
     image: "/images/detail.jpeg",
     title: "Deep Cabin Cleaning",
+    titleAr: "تنظيف عميق للمقصورة",
     description:
       "Deep interior rejuvenation targeting every crack and crevice, removing deep-set dirt, stains, and odors to restore a brand-new cabin feel.",
+    descriptionAr:
+      "تجديد داخلي عميق يستهدف كل زاوية وشق، لإزالة الأوساخ والبقع والروائح المتراكمة واستعادة إحساس المقصورة الجديدة.",
   },
 ];
 
-export {
-  navLinks,
-  cocktailLists,
-  mockTailLists,
-  profileLists,
-  featureLists,
-  goodLists,
-  openingHours,
-  storeInfo,
-  socials,
-  sliderLists,
-};
+export { navLinks, featureLists, goodLists,featureListsAr,goodListsAr, socials, sliderLists };

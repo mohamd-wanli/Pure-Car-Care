@@ -1,12 +1,13 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
-import { useRef } from "react";
+import { useRef, Fragment } from "react";
 import { useMediaQuery } from "react-responsive";
+import { useLanguage } from "../../Context/LanguageContext";
 
 const Hero = () => {
   const videoRef = useRef(null);
-
+  const { isArabic } = useLanguage();
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   useGSAP(() => {
@@ -79,40 +80,48 @@ const Hero = () => {
         once: true,
       });
     }
-  }, [isMobile]);
+  }, [isMobile, isArabic]);
 
   return (
-    <>
+    <Fragment key={isArabic ? "ar" : "en"}>
       <section id="hero" className="noisy">
         <h1 className="title">PURE</h1>
 
-      
-
         <div className="body">
-          {/* <img src="/images/arrow.png" alt="arrow" className="arrow" /> */}
-
           <div className="content">
             <div className="space-y-5">
               <p className="text-yellow font-semibold">
-                Wash. Protect. Perfection.
+                {isArabic ? "غسيل. حماية. كمال." : "Wash. Protect. Perfection."}
               </p>
               <p className="subtitle">
-                Experience the <span className="text-yellow">Luxury</span>{" "}
-                <br /> of <span className="text-yellow">Elite Car Care</span>
+                {isArabic ? (
+                  <>
+                    استمتع بفخامة العناية الفائقة <br /> بسيارتك
+                  </>
+                ) : (
+                  <>
+                    {" "}
+                    Experience the <span className="text-yellow">
+                      Luxury
+                    </span>{" "}
+                    <br /> of{" "}
+                    <span className="text-yellow">Elite Car Care</span>{" "}
+                  </>
+                )}
               </p>
             </div>
 
             <div className="view-cocktails">
               <p className="subtitle">
-                "Every treatment in our garage is a blend of advanced
-                formulations, expert care, and relentless passion — designed to
-                restore and protect your vehicle's showroom shine."
+                {isArabic
+                  ? '"كل عملية عناية في مركزنا هي مزيج من تركيبات متطورة، وخبرة احترافية، وشغف لا يتوقف — مصممة لاستعادة وحماية بريق سيارتك كما في المعرض."'
+                  : '"Every treatment in our garage is a blend of advanced formulations, expert care, and relentless passion — designed to restore and protect your vehicle\'s showroom shine."'}
               </p>
               <a
                 className="text-yellow font-semibold hover:text-white"
                 href="#cocktails"
               >
-                View Services
+                {isArabic ? "عرض الخدمات" : "View Services"}
               </a>
             </div>
           </div>
@@ -128,7 +137,7 @@ const Hero = () => {
           src="/videos/drift_detailed.mp4"
         />
       </div>
-    </>
+    </Fragment>
   );
 };
 

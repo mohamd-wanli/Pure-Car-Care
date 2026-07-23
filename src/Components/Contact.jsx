@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "../../Context/LanguageContext";
 
 const Contact = () => {
   const [dragX, setDragX] = useState(0);
@@ -12,6 +13,7 @@ const Contact = () => {
   const startXRef = useRef(0);
   const startOffsetRef = useRef(0);
   const dragXRef = useRef(0);
+  const { isArabic } = useLanguage();
   useGSAP(() => {
     const titleSplit = SplitText.create("#contact h2", { type: "words" });
 
@@ -91,9 +93,9 @@ const Contact = () => {
   };
 
   return (
-    <footer id="contact">
+    <footer id="contact" key={isArabic ? "ar" : "en"}>
       <div className="content">
-        <h2>Where to Find Us</h2>
+        <h2>{isArabic ? "أين تجدنا" : "Where to Find Us"}</h2>
 
         <div className="contact-map">
           <iframe
@@ -109,7 +111,9 @@ const Contact = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Open Pure Care Car in Google Maps
+            {isArabic
+              ? "افتح Pure Care Car في خرائط جوجل"
+              : "Open Pure Care Car in Google Maps"}
           </a>
         </div>
 
@@ -118,12 +122,14 @@ const Contact = () => {
             <div className="card-heading">
               <span className="card-badge">Pure Care Car</span>
               <h3>
-                <span>Call / WhatsApp</span>
+                <span>{isArabic ? "اتصال / واتساب" : "Call / WhatsApp"}</span>
                 <span className="contact-number">00971565679597</span>
               </h3>
             </div>
             <p className="contact-note">
-              أفضل خدمة تنظيف وصيانة للسيارات في دبي.
+              {isArabic
+                ? "أفضل خدمة تنظيف وصيانة للسيارات في دبي."
+                : "The best car cleaning and maintenance service in Dubai."}
             </p>
 
             <div
@@ -149,14 +155,13 @@ const Contact = () => {
               >
                 <img src="/images/call.svg" alt="phone icon" />
               </span>
-              <span className="phone-label">اسحب للاتصال</span>
+              {isArabic ? "اسحب للاتصال" : "Swipe to call"}
             </div>
           </div>
         </div>
 
         <div>
-          <h3>Socials</h3>
-
+          <h3>{isArabic ? "تابعنا" : "Socials"}</h3>
           <div className="flex-center gap-5">
             {socials.map((social) => (
               <a
