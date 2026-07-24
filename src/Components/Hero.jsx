@@ -11,16 +11,16 @@ const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   useGSAP(() => {
-    const heroSplit =  SplitText.create(".title", {
+    const heroSplit = SplitText.create(".title", {
       type: "chars, words",
     });
 
-    const paragraphSplit =  SplitText.create(".subtitle", {
+    const paragraphSplit = SplitText.create(".subtitle", {
       type: "lines",
     });
 
     // Apply text-gradient class once before animating
-    heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
+    heroSplit.chars.forEach((char) => char.classList.add("text-yellow"));
 
     gsap.from(heroSplit.chars, {
       yPercent: 100,
@@ -81,7 +81,9 @@ const Hero = () => {
   return (
     <>
       <section id="hero" className="noisy">
-        <h1 className="title">PURE</h1>
+        <h1 className="title" dir="ltr">
+           PURE 
+        </h1>
 
         <div className="body">
           <div className="content">
