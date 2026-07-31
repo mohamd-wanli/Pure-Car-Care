@@ -1,14 +1,17 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
-import { useRef, Fragment } from "react";
+import { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useLanguage } from "../../Context/LanguageContext";
 
+const MOBILE_BREAKPOINT = 767;
+
 const Hero = () => {
   const videoRef = useRef(null);
+  const imageRef = useRef(null);
   const { isArabic } = useLanguage();
-  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const isMobile = useMediaQuery({ maxWidth: MOBILE_BREAKPOINT });
 
   useGSAP(() => {
     const heroSplit = SplitText.create(".title", {
@@ -19,7 +22,6 @@ const Hero = () => {
       type: "lines",
     });
 
-    // Apply text-gradient class once before animating
     heroSplit.chars.forEach((char) => char.classList.add("text-yellow"));
 
     gsap.from(heroSplit.chars, {
@@ -37,44 +39,47 @@ const Hero = () => {
       stagger: 0.06,
       delay: 1,
     });
+  }, []);
 
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: "#hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-
-    const video = videoRef.current;
-
-    if (!video) return;
-
-    const startValue = isMobile ? "top 50%" : "center 60%";
-    const endValue = isMobile ? "120% top" : "bottom top";
-
-    const playVideoOnScroll = () => {
-      const duration = video.duration || 2;
-
-      gsap.to(video, {
-        currentTime: duration,
-        ease: "none",
-        scrollTrigger: {
-          trigger: "#hero",
-          start: startValue,
-          end: endValue,
-          scrub: true,
-        },
-      });
-    };
-
-    if (video.readyState >= 2) {
-      playVideoOnScroll();
+  useGSAP(() => {
+    if (isMobile) {
+      if (imageRef.current) {
+        gsap.to(imageRef.current, {
+          scale: 1.15,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
     } else {
-      video.addEventListener("loadedmetadata", playVideoOnScroll, {
-        once: true,
-      });
+      const video = videoRef.current;
+      if (!video) return;
+
+      const setupVideoScroll = () => {
+        const duration = video.duration || 2;
+        gsap.to(video, {
+          currentTime: duration,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      };
+
+      if (video.readyState >= 2) {
+        setupVideoScroll();
+      } else {
+        video.addEventListener("loadedmetadata", setupVideoScroll, {
+          once: true,
+        });
+      }
     }
   }, [isMobile]);
 
@@ -82,7 +87,7 @@ const Hero = () => {
     <>
       <section id="hero" className="noisy">
         <h1 className="title" dir="ltr">
-           PURE 
+          PURE
         </h1>
 
         <div className="body">
@@ -126,14 +131,30 @@ const Hero = () => {
         </div>
       </section>
 
-      <div className="video absolute inset-0 overflow-hidden">
-        <video
-          ref={videoRef}
-          muted
-          playsInline
-          preload="auto"
-          src="/videos/drift_detailed.mp4"
-        />
+      <div className="video absolute inset-0 overflow-hidden hero-bg-layer">
+        {isMobile ? (
+          <img
+            ref={imageRef}
+            src="/images/hero.jpg"
+            alt="Hero background"
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+        ) : (
+          <video
+            ref={videoRef}
+            muted
+            playsInline
+            preload="metadata"
+            poster="/images/hero-poster.jpg"
+          >
+            <source src="/videos/drift_detailed.webm" type="video/webm" />
+            <source
+              src="/videos/drift_detailed_compressed.mp4"
+              type="video/mp4"
+            />
+          </video>
+        )}
       </div>
     </>
   );
