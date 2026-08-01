@@ -89,14 +89,14 @@ const About = () => {
 
         <div className="md:col-span-3">
           <div className="noisy" />
-          <img src="/images/car3.jpg" alt="grid-img-5" />
+          <img src="/images/car33.jpg" alt="grid-img-5" />
         </div>
       </div>
 
       <div className="bottom-grid">
         <div className="md:col-span-8">
           <div className="noisy" />
-          <img src="/images/car4.jpg" alt="grid-img-3" />
+          <img src="/images/car44.jpg" alt="grid-img-3" />
         </div>
 
         <div className="md:col-span-4">

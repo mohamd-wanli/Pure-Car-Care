@@ -129,8 +129,8 @@ const Contact = () => {
             </div>
             <p className="contact-note">
               {isArabic
-                ? "أفضل خدمة تنظيف وصيانة للسيارات في دبي."
-                : "The best car cleaning and maintenance service in Dubai."}
+                ? "العناية التي تستحقها سيارتك بمعايير عالمية في الإمارات."
+                : "The care your car deserves with global standards in the UAE."}
             </p>
 
             <div

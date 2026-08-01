@@ -94,15 +94,18 @@ const Hero = () => {
           <div className="content">
             <div className="space-y-5">
               <p className="text-yellow font-semibold">
-                <span className="en-only">Wash. Protect. Perfection.</span>
-                <span className="ar-only">غسيل. حماية. كمال.</span>
+                <span className="en-only">PPF. Tint. Ceramic</span>
+                <span className="ar-only">
+                  حمايةالطلاء. تظليل. طلاءالسيراميك.
+                </span>
               </p>
               <p className="subtitle">
                 <span className="en-only">
-                  Experience the Luxury <br /> of Elite Car Care
+                  Maximum protection <br /> luxury without compromise
                 </span>
                 <span className="ar-only">
-                  استمتع بفخامة العناية الفائقة <br /> بسيارتك
+                  حماية قصوى فخامة بلا
+                  <br /> تنازلات
                 </span>
               </p>
             </div>

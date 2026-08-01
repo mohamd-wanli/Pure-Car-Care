@@ -79,13 +79,13 @@ const OurWork = () => {
           <div id="masked-content">
             <h3>
               {isArabic
-                ? "حرفية بالشغف، ولمعان بالإتقان"
-                : "Driven by Craft, Polished with Passion"}
+                ? " بُنيَ على المهارة، وقادهُ الإتقان"
+                : "Built on Skill, Driven by Pride."}
             </h3>
             <p>
               {isArabic
-                ? "هذا ليس مجرد غسيل. إنها عملية ترميم متقنة صُممت خصيصًا لسيارتك."
-                : "This isn't just a wash. It's a carefully crafted restoration made just for your vehicle."}
+                ? "هذه ليست مجرد صيانة. هذا تجديد احترافي فائق لسيارتك."
+                : "This is not maintenance. This is master-level rejuvenation for your car."}
             </p>
             <a
               id="follow-btn"
