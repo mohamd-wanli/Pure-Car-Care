@@ -143,6 +143,26 @@ const sliderLists = [
     descriptionAr:
       "تجديد داخلي عميق يستهدف كل زاوية وشق، لإزالة الأوساخ والبقع والروائح المتراكمة واستعادة إحساس المقصورة الجديدة.",
   },
+  {
+    id: 7,
+    name: "Window Tinting",
+    nameAr: "تظليل الزجاج",
+    image: "/images/tint.jpg",
+    title: "Pure-Ceramic Window Tinting",
+    titleAr: "تظليل زجاج بيور سيراميك",
+    description:
+      "pure-Ceramic Tint, crystal clear from inside & dark from outside. Stay cool & safe with 99% IR & UV heat rejection designed specifically for UAE climate.",
+    descriptionAr:
+      "تظليل بيور الواضح من الداخل ومعتم من الخارج. يحافظ على البرودة مع رفض الحرارة بنسبة 99٪ لأشعة الشمس تحت الحمراء والحماية القصوى من الأشعة فوق البنفسجية المصمم خصيصًا لمناخ الإمارات العربية المتحدة",
+  },
 ];
 
-export { navLinks, featureLists, goodLists,featureListsAr,goodListsAr, socials, sliderLists };
+export {
+  navLinks,
+  featureLists,
+  goodLists,
+  featureListsAr,
+  goodListsAr,
+  socials,
+  sliderLists,
+};
