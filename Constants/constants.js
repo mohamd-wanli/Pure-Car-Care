@@ -109,11 +109,11 @@ const sliderLists = [
   },
   {
     id: 4,
-    name: "Architectural Window Tinting",
-    nameAr: "تظليل نوافذ المباني",
+    name: "thermal insulation for glass facades",
+    nameAr: "عازل حراري للواجهات الزجاجية",
     image: "/images/window tinting shops.jpeg",
-    title: "Villas & Shops Windows Tinting",
-    titleAr: "تظليل نوافذ الفلل والمحلات",
+    title: "thermal insulation for villas and commercial shops",
+    titleAr: "عازل حراري للفلل والمحلات التجارية",
     description:
       "enjoy cooler spaces with our best window tints for villas & shops, preventing 99% of the harmful UV light and providing our best heat rejection technologies.",
     descriptionAr:

@@ -113,8 +113,8 @@ const Contact = () => {
             rel="noopener noreferrer"
           >
             {isArabic
-              ? "افتح Pure Care Car في خرائط جوجل"
-              : "Open Pure Care Car in Google Maps"}
+              ? "افتح Pure Car Care في خرائط جوجل"
+              : "Open Pure Car Care in Google Maps"}
           </a>
         </div>
 
@@ -124,7 +124,9 @@ const Contact = () => {
               <span className="card-badge">Pure Care Car</span>
               <h3>
                 <span>{isArabic ? "اتصال / واتساب" : "Call / WhatsApp"}</span>
-                <span className="contact-number">00971565679597</span>
+                <span className="contact-number">
+                  {isArabic ? "971565679597+" : "+971565679597"}
+                </span>
               </h3>
             </div>
             <p className="contact-note">

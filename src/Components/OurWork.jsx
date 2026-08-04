@@ -82,11 +82,7 @@ const OurWork = () => {
                 ? " بُنيَ على المهارة، وقادهُ الإتقان"
                 : "Built on Skill, Driven by Pride."}
             </h3>
-            <p>
-              {isArabic
-                ? "هذه ليست مجرد صيانة. هذا تجديد احترافي فائق لسيارتك."
-                : "This is not maintenance. This is master-level rejuvenation for your car."}
-            </p>
+
             <a
               id="follow-btn"
               href="https://www.instagram.com/purecarcare.ae?igsh=eWptMzl5Z2NseTFi&utm_source=qr"
